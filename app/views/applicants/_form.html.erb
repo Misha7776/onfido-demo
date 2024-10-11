@@ -1,0 +1,37 @@
+<%= form_with(model: applicant, class: 'flex flex-col gap-y-3') do |form| %>
+  <% if applicant.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+        <% applicant.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name%>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :document %>
+    <%= form.file_field :document %>
+  </div>
+
+  <div>
+    <%= form.label :document_type %>
+    <%= form.select :document_type, Applicant::DOC_TYPES %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

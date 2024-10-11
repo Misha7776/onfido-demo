@@ -1,0 +1,12 @@
+<% content_for :title, "Editing webhook event" %>
+
+<h1>Editing webhook event</h1>
+
+<%= render "form", webhook_event: @webhook_event %>
+
+<br>
+
+<div>
+  <%= link_to "Show this webhook event", @webhook_event %> |
+  <%= link_to "Back to webhook events", webhook_events_path %>
+</div>

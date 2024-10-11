@@ -1,0 +1,21 @@
+<div id="<%= dom_id applicant %>">
+  <p>
+    <strong>First name:</strong>
+    <%= applicant.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= applicant.last_name %>
+  </p>
+
+  <p>
+    <strong>Document:</strong>
+    <%= link_to applicant.document.filename, rails_blob_path(applicant.document, disposition: "attachment") %>
+  </p>
+
+  <p>
+    <strong>Document type:</strong>
+    <%= applicant.document_type %>
+  </p>
+</div>

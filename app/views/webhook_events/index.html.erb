@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Webhook events" %>
+
+<h1>Webhook events</h1>
+
+<div id="webhook_events">
+  <% @webhook_events.each do |webhook_event| %>
+    <%= render webhook_event %>
+    <p>
+      <%= link_to "Show this webhook event", webhook_event %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New webhook event", new_webhook_event_path %>
